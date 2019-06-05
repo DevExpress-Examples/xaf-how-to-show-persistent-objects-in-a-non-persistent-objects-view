@@ -1,1 +1,1 @@
-<%@ Application Language="C#" CodeBehind="Global.asax.cs" Inherits="ComplexDialogSample.Web.Global"%>
+﻿<%@ Application Language="vb" CodeBehind="Global.asax.vb" Inherits="ComplexDialogSample.Web.Global"%>

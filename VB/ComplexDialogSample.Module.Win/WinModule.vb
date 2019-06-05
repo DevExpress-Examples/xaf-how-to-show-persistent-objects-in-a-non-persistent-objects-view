@@ -14,20 +14,19 @@ Imports DevExpress.ExpressApp.Model.DomainLogics
 Imports DevExpress.ExpressApp.Model.NodeGenerators
 
 Namespace ComplexDialogSample.Module.Win
-	' For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
-	<ToolboxItemFilter("Xaf.Platform.Win")>
-	Public NotInheritable Partial Class ComplexDialogSampleWindowsFormsModule
-		Inherits ModuleBase
-
-		Public Sub New()
-			InitializeComponent()
-		End Sub
-		Public Overrides Function GetModuleUpdaters(ByVal objectSpace As IObjectSpace, ByVal versionFromDB As Version) As IEnumerable(Of ModuleUpdater)
-			Return ModuleUpdater.EmptyModuleUpdaters
-		End Function
-		Public Overrides Sub Setup(ByVal application As XafApplication)
-			MyBase.Setup(application)
-			' Manage various aspects of the application UI and behavior at the module level.
-		End Sub
-	End Class
+    <ToolboxItemFilter("Xaf.Platform.Win")> _
+    Public NotInheritable Partial Class ComplexDialogSampleWindowsFormsModule
+        Inherits ModuleBase
+    ' For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+        Public Overrides Function GetModuleUpdaters(ByVal objectSpace As IObjectSpace, ByVal versionFromDB As Version) As IEnumerable(Of ModuleUpdater)
+            Return ModuleUpdater.EmptyModuleUpdaters
+        End Function
+        Public Overrides Sub Setup(ByVal application As XafApplication)
+            MyBase.Setup(application)
+            ' Manage various aspects of the application UI and behavior at the module level.
+        End Sub
+    End Class
 End Namespace
