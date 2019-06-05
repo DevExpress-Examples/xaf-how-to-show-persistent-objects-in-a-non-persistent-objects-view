@@ -38,7 +38,7 @@ Namespace ComplexDialogSample.Module.Controllers
             AddHandler action.Execute, AddressOf action_Execute
         End Sub
         Private Sub action_CustomizePopupWindowParams(ByVal sender As Object, ByVal e As CustomizePopupWindowParamsEventArgs)
-            Dim os As IObjectSpace = Application.CreateObjectSpace()
+            Dim os As IObjectSpace = Application.CreateObjectSpace(GetType(Service))
             e.Context = TemplateContext.PopupWindow
             e.View = Application.CreateDetailView(os, New OrderTemplate(DirectCast(os, DevExpress.ExpressApp.Xpo.XPObjectSpace).Session))
             CType(e.View, DetailView).ViewEditMode = ViewEditMode.Edit
@@ -46,7 +46,7 @@ Namespace ComplexDialogSample.Module.Controllers
         Private Sub action_Execute(ByVal sender As Object, ByVal e As PopupWindowShowActionExecuteEventArgs)
             Dim parameters As OrderTemplate = TryCast(e.PopupWindow.View.CurrentObject, OrderTemplate)
             Dim listPropertyEditor As ListPropertyEditor = TryCast(CType(e.PopupWindow.View, DetailView).FindItem("Services"), ListPropertyEditor)
-            Dim os As IObjectSpace = Application.CreateObjectSpace()
+            Dim os As IObjectSpace = Application.CreateObjectSpace(GetType(Team))
             For Each b As Office In e.SelectedObjects
                 Dim team As Team = os.GetObject(Of Team)(parameters.Team)
                 For Each service As Service In listPropertyEditor.ListView.SelectedObjects

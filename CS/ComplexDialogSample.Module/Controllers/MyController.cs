@@ -32,7 +32,7 @@ namespace ComplexDialogSample.Module.Controllers {
             action.Execute += new PopupWindowShowActionExecuteEventHandler(action_Execute);
         }
         void action_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e) {
-            IObjectSpace os = Application.CreateObjectSpace();
+            IObjectSpace os = Application.CreateObjectSpace(typeof(Service));
             e.Context = TemplateContext.PopupWindow;
             e.View = Application.CreateDetailView(os, new OrderTemplate(((DevExpress.ExpressApp.Xpo.XPObjectSpace)os).Session));
             ((DetailView)e.View).ViewEditMode = ViewEditMode.Edit;
@@ -40,7 +40,7 @@ namespace ComplexDialogSample.Module.Controllers {
         void action_Execute(object sender, PopupWindowShowActionExecuteEventArgs e) {
             OrderTemplate parameters = e.PopupWindow.View.CurrentObject as OrderTemplate;
             ListPropertyEditor listPropertyEditor = ((DetailView)e.PopupWindow.View).FindItem("Services") as ListPropertyEditor;
-            IObjectSpace os = Application.CreateObjectSpace();
+            IObjectSpace os = Application.CreateObjectSpace(typeof(Team));
             foreach (Office b in e.SelectedObjects) {
                 Team team = os.GetObject<Team>(parameters.Team);
                 foreach (Service service in listPropertyEditor.ListView.SelectedObjects) {
