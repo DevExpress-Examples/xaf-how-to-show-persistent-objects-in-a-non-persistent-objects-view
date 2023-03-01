@@ -1,107 +1,124 @@
-﻿Imports DevExpress.Persistent.Base
+Imports DevExpress.Persistent.Base
 Imports DevExpress.Persistent.BaseImpl
 Imports DevExpress.Xpo
-Imports System
 Imports System.ComponentModel
 
 Namespace ComplexDialogSample.Module.BusinessObjects
 
-    <NavigationItem("Resources")> _
+    <NavigationItem("Resources")>
     Public Class Team
         Inherits BaseObject
 
         Public Sub New(ByVal session As Session)
             MyBase.New(session)
         End Sub
-        Public Property Name() As String
+
+        Public Property Name As String
             Get
                 Return GetPropertyValue(Of String)("Name")
             End Get
+
             Set(ByVal value As String)
-                SetPropertyValue(Of String)("Name", value)
+                SetPropertyValue("Name", value)
             End Set
         End Property
     End Class
 
-    <NavigationItem("Process"), DefaultProperty("Index")> _
+    <NavigationItem("Process")>
+    <DefaultProperty("Index")>
     Public Class Office
         Inherits BaseObject
 
         Public Sub New(ByVal session As Session)
             MyBase.New(session)
         End Sub
-        Public Property Index() As String
+
+        Public Property Index As String
             Get
                 Return GetPropertyValue(Of String)("Index")
             End Get
+
             Set(ByVal value As String)
-                SetPropertyValue(Of String)("Index", value)
+                SetPropertyValue("Index", value)
             End Set
         End Property
-        Public Property OccupiedBy() As String
+
+        Public Property OccupiedBy As String
             Get
                 Return GetPropertyValue(Of String)("OccupiedBy")
             End Get
+
             Set(ByVal value As String)
-                SetPropertyValue(Of String)("OccupiedBy", value)
+                SetPropertyValue("OccupiedBy", value)
             End Set
         End Property
     End Class
 
-    <NavigationItem("Process")> _
+    <NavigationItem("Process")>
     Public Class Order
         Inherits BaseObject
 
         Public Sub New(ByVal session As Session)
             MyBase.New(session)
         End Sub
-        Public Property Team() As Team
+
+        Public Property Team As Team
             Get
                 Return GetPropertyValue(Of Team)("Team")
             End Get
+
             Set(ByVal value As Team)
-                SetPropertyValue(Of Team)("Team", value)
+                SetPropertyValue("Team", value)
             End Set
         End Property
-        Public Property Office() As Office
+
+        Public Property Office As Office
             Get
                 Return GetPropertyValue(Of Office)("Office")
             End Get
+
             Set(ByVal value As Office)
-                SetPropertyValue(Of Office)("Office", value)
+                SetPropertyValue("Office", value)
             End Set
         End Property
-        Public Property Service() As Service
+
+        Public Property Service As Service
             Get
                 Return GetPropertyValue(Of Service)("Service")
             End Get
+
             Set(ByVal value As Service)
-                SetPropertyValue(Of Service)("Service", value)
+                SetPropertyValue("Service", value)
             End Set
         End Property
-        Public Property DueDate() As Date
+
+        Public Property DueDate As Date
             Get
                 Return GetPropertyValue(Of Date)("DueDate")
             End Get
+
             Set(ByVal value As Date)
-                SetPropertyValue(Of Date)("DueDate", value)
+                SetPropertyValue("DueDate", value)
             End Set
         End Property
     End Class
 
-    <NavigationItem("Resources"), DefaultProperty("Description")> _
+    <NavigationItem("Resources")>
+    <DefaultProperty("Description")>
     Public Class Service
         Inherits BaseObject
 
         Public Sub New(ByVal session As Session)
             MyBase.New(session)
         End Sub
-        Public Property Description() As String
+
+        Public Property Description As String
             Get
                 Return GetPropertyValue(Of String)("Description")
             End Get
+
             Set(ByVal value As String)
-                SetPropertyValue(Of String)("Description", value)
+                SetPropertyValue("Description", value)
             End Set
         End Property
     End Class
