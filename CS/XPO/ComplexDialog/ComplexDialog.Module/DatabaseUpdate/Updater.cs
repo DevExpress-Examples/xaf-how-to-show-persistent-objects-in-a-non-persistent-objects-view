@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
+using ComplexDialogSample.Module.BusinessObjects;
 
 namespace ComplexDialog.Module.DatabaseUpdate;
 
@@ -15,14 +16,29 @@ public class Updater : ModuleUpdater {
     }
     public override void UpdateDatabaseAfterUpdateSchema() {
         base.UpdateDatabaseAfterUpdateSchema();
+        var cnt = ObjectSpace.GetObjectsCount(typeof(Team), null);
+        if (cnt > 0) {
+            return;
+        }
+
+        var team1 = ObjectSpace.CreateObject<Team>();
+        team1.Name = "Team1";
+
+        var serv1 = ObjectSpace.CreateObject<Service>();
+        serv1.Description = "Service1";
+
+        var office1 = ObjectSpace.CreateObject<Office>();
+        office1.Index = "Index1";
+        office1.OccupiedBy = "Office1";
+
         //string name = "MyName";
-        //DomainObject1 theObject = ObjectSpace.FirstOrDefault<DomainObject1>(u => u.Name == name);
+        //EntityObject1 theObject = ObjectSpace.FirstOrDefault<EntityObject1>(u => u.Name == name);
         //if(theObject == null) {
-        //    theObject = ObjectSpace.CreateObject<DomainObject1>();
+        //    theObject = ObjectSpace.CreateObject<EntityObject1>();
         //    theObject.Name = name;
         //}
 
-		//ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
+        ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
     }
     public override void UpdateDatabaseBeforeUpdateSchema() {
         base.UpdateDatabaseBeforeUpdateSchema();
