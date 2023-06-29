@@ -35,10 +35,10 @@ public class ComplexDialogEFDesignTimeDbContextFactory : IDesignTimeDbContextFac
 public class ComplexDialogEFEFCoreDbContext : DbContext {
 	public ComplexDialogEFEFCoreDbContext(DbContextOptions<ComplexDialogEFEFCoreDbContext> options) : base(options) {
 	}
-	public DbSet<Team> Team { get; set; }
-	public DbSet<Office> Office { get; set; }
-	public DbSet<Order> Order { get; set; }
-	public DbSet<Service> Service { get; set; }
+	public DbSet<Team> Teams { get; set; }
+	public DbSet<Office> Offices { get; set; }
+	public DbSet<Order> Orders { get; set; }
+	public DbSet<Service> Services { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
