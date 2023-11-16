@@ -3,22 +3,23 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E5067)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [BusinessObjects.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects/BusinessObjects.cs)
-* [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs ) 
-<!-- default file list end -->
-# How to show a complex dialog
+# How to show a dialog window with multiple entry fields
+
+This example demonstrates how to implement a complex dialog window with multiple entry fields.
 
 ![image](https://user-images.githubusercontent.com/14300209/229573300-ecc21bd7-51e2-4cd9-bf34-cc6c73622efb.png)
 
+## Implementation Details
+1. Create a non-persistent class that implements entry fields and use [PopupWindowShowAction](https://docs.devexpress.com/eXpressAppFramework/402158/getting-started/in-depth-tutorial-blazor/add-actions-menu-commands/add-an-action-that-displays-a-pop-up-window) to display a [Detail View](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.DetailView) of the class instance in a pop-up window.
+2. Extend the class with a collection property that allows user to select items from a list. To read the selection in the Action's `Execute` event, access the `ListPropertyEditor` that is the nested List View.
+3. The pop-up window invoked by the PopupWindowShowAction contains the **OK** and **Cancel** buttons implemented in the [DialogController](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.SystemModule.DialogController). To add other Actions, create a controller for the dialog class and set the `Category` to `PopupActions`.</p>
 
-<p><strong>Task:</strong> We need to ask the user for a number of values by presenting a complex dialog with a number of entry fields nicely arranged.</p>
-<p><strong>Solution:</strong> To show a dialog, we create a non-persistent class with properties representing entry fields and show a <a href="https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppDetailViewtopic.aspx">DetailView</a> of its instance via the <a href="https://docs.devexpress.com/eXpressAppFramework/402158/getting-started/in-depth-tutorial-blazor/add-actions-menu-commands/add-an-action-that-displays-a-pop-up-window?p=netstandard">PopupWindowShowAction</a>. Besides querying simple values, we can add a collection-type property to the dialog class to allow selecting items from the list. This selection can be read in the action's Execute event by accessing <strong>ListPropertyEditor</strong> representing the nested list view. The popup window displayed via the action contains the usual OK and Cancel action buttons provided by the <a href="https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppSystemModuleDialogControllertopic.aspx">DialogController</a>. If necessary, you can provide additional action buttons by creating a controller for the dialog class with the Category set to <strong>PopupActions</strong>.</p>
+## Files to Review
 
-<p><u>See also:<br><a href="https://documentation.devexpress.com/eXpressAppFramework/CustomDocument116516.aspx">Non-Persistent Objects</a><br></u></p>
+* [BusinessObjects.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects/BusinessObjects.cs)
+* [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs ) 
 
-<br/>
+## Documentation
 
-
+* [Non-Persistent Objects](https://docs.devexpress.com/eXpressAppFramework/116516/business-model-design-orm/non-persistent-objects).
