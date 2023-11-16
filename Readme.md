@@ -10,9 +10,9 @@ This example demonstrates how to implement a complex dialog window with multiple
 ![image](https://user-images.githubusercontent.com/14300209/229573300-ecc21bd7-51e2-4cd9-bf34-cc6c73622efb.png)
 
 ## Implementation Details
-1. Create a non-persistent class that implements entry fields and use [PopupWindowShowAction](https://docs.devexpress.com/eXpressAppFramework/402158/getting-started/in-depth-tutorial-blazor/add-actions-menu-commands/add-an-action-that-displays-a-pop-up-window) to display a [Detail View](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.DetailView) of the class instance in a pop-up window.
+1. Create a non-persistent class that implements entry fields and use [**PopupWindowShowAction**](https://docs.devexpress.com/eXpressAppFramework/402158/getting-started/in-depth-tutorial-blazor/add-actions-menu-commands/add-an-action-that-displays-a-pop-up-window) to display a [Detail View](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.DetailView) of the class instance in a pop-up window.
 2. Extend the class with a collection property that allows user to select items from a list. To read the selection in the Action's `Execute` event, access the `ListPropertyEditor` that is the nested List View.
-3. The pop-up window invoked by the PopupWindowShowAction contains the **OK** and **Cancel** buttons implemented in the [DialogController](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.SystemModule.DialogController). To add other Actions, create a controller for the dialog class and set the `Category` to `PopupActions`.</p>
+3. The pop-up window invoked by the **PopupWindowShowAction** contains the **OK** and **Cancel** buttons implemented in the [DialogController](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.SystemModule.DialogController). To add other Actions, create a controller for the dialog class and set the `Category` to `PopupActions`.</p>
 
 ## Files to Review
 
