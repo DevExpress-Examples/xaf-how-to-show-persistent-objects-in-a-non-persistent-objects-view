@@ -10,10 +10,8 @@ using DevExpress.ExpressApp.Editors;
 using ComplexDialogSample.Module.BusinessObjects;
 
 namespace ComplexDialogSample.Module.Controllers {
-    public class MyController : ViewController {
+    public class MyController : ObjectViewController<ListView,Office> {
         public MyController() {
-            TargetObjectType = typeof(Office);
-            TargetViewType = ViewType.ListView;
             PopupWindowShowAction action = new PopupWindowShowAction(this, "AssignJobs", PredefinedCategory.RecordEdit);
             action.SelectionDependencyType = SelectionDependencyType.RequireMultipleObjects;
             action.CustomizePopupWindowParams += new CustomizePopupWindowParamsEventHandler(action_CustomizePopupWindowParams);
