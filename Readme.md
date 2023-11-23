@@ -16,7 +16,7 @@ This example demonstrates how to implement a complex dialog window with multiple
 
 ## Files to Review
 
-* [BusinessObjects.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects/BusinessObjects.cs)
+* [BusinessObjects](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects)
 * [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs ) 
 
 ## Documentation
