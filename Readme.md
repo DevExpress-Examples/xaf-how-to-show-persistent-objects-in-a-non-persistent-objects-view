@@ -3,9 +3,9 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# How to show a dialog window with multiple entry fields
+# How to show persistent objects in a non-persistent object's view
 
-This example demonstrates how to implement a complex dialog window with multiple entry fields.
+This example demonstrates how to declare a collection property of a persistent type in a non-persistent class and display it in the UI.
 
 ![image](https://user-images.githubusercontent.com/14300209/229573300-ecc21bd7-51e2-4cd9-bf34-cc6c73622efb.png)
 
