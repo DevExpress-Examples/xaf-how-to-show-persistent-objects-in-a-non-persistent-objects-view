@@ -6,7 +6,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [BusinessObjects.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects/BusinessObjects.cs)
+
 * [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs ) 
 <!-- default file list end -->
 # How to show a complex dialog
