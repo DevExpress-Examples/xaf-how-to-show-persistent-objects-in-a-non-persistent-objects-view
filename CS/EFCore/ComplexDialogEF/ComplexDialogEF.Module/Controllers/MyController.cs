@@ -10,10 +10,8 @@ using DevExpress.ExpressApp.Editors;
 using ComplexDialogSample.Module.BusinessObjects;
 
 namespace ComplexDialogSample.Module.Controllers {
-    public class MyController : ViewController {
+    public class MyController : ObjectViewController<ListView, Office> {
         public MyController() {
-            TargetObjectType = typeof(Office);
-            TargetViewType = ViewType.ListView;
             PopupWindowShowAction action = new PopupWindowShowAction(this, "AssignJobs", PredefinedCategory.RecordEdit);
             action.SelectionDependencyType = SelectionDependencyType.RequireMultipleObjects;
             action.CustomizePopupWindowParams += new CustomizePopupWindowParamsEventHandler(action_CustomizePopupWindowParams);
@@ -26,11 +24,11 @@ namespace ComplexDialogSample.Module.Controllers {
             e.View = Application.CreateDetailView(os, template);
         }
         void action_Execute(object sender, PopupWindowShowActionExecuteEventArgs e) {
-            OrderTemplate parameters =(OrderTemplate) e.PopupWindow.View.CurrentObject;
+            OrderTemplate parameters = (OrderTemplate)e.PopupWindow.View.CurrentObject;
             ListPropertyEditor listPropertyEditor = ((DetailView)e.PopupWindow.View).FindItem("Services") as ListPropertyEditor;
             IObjectSpace os = Application.CreateObjectSpace(typeof(Team));
+            Team team = os.GetObject<Team>(parameters.Team);
             foreach (Office b in e.SelectedObjects) {
-                Team team = os.GetObject<Team>(parameters.Team);
                 foreach (Service service in listPropertyEditor.ListView.SelectedObjects) {
                     Order order = os.CreateObject<Order>();
                     order.DueDate = parameters.DueDate;
