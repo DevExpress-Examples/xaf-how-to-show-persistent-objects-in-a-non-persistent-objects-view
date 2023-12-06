@@ -18,7 +18,9 @@ This example demonstrates how to declare a collection property of a persistent t
 ## Files to Review
 
 * [BusinessObjects](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/BusinessObjects)
-* [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs ) 
+* [MyController.cs](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Controllers/MyController.cs)
+* [Module.cs (XPO](./CS/EFCore/ComplexDialogEF/ComplexDialogEF.Module/Module.cs)
+ 
 
 ## Documentation
 
