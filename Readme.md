@@ -4,13 +4,14 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# How to show persistent objects in a non-persistent object's view
+# XAF - How to show persistent objects in a non-persistent object's view
 
 This example demonstrates how to declare a collection property of a persistent type in a non-persistent class and display it in the UI.
 
 ![image](https://user-images.githubusercontent.com/14300209/229573300-ecc21bd7-51e2-4cd9-bf34-cc6c73622efb.png)
 
 ## Implementation Details
+
 1. Create a non-persistent class that implements entry fields and use [**PopupWindowShowAction**](https://docs.devexpress.com/eXpressAppFramework/402158/getting-started/in-depth-tutorial-blazor/add-actions-menu-commands/add-an-action-that-displays-a-pop-up-window) to display a [Detail View](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.DetailView) of the class instance in a pop-up window.
 2. Extend the class with a collection property that allows user to select items from a list. To read the selection in the Action's `Execute` event, access the `ListPropertyEditor` that is the nested List View.
 3. Handle the `ObjectSpaceCreated` event to create an `ObjectSpace` that can handle persistent objects (the collection property you added). Review the following documentation article for additional information: [How to: Show Persistent Objects in a Non-Persistent Object's View](https://docs.devexpress.com/eXpressAppFramework/116106/business-model-design-orm/non-persistent-objects/how-to-show-persistent-objects-in-a-non-persistent-objects-view)
