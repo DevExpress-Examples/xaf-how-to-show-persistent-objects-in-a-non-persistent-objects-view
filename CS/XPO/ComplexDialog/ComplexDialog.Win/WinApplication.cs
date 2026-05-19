@@ -14,7 +14,6 @@ public class ComplexDialogWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ComplexDialog";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ComplexDialogWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ComplexDialogWindowsFormsApplication_CustomizeLanguagesList;
     }
